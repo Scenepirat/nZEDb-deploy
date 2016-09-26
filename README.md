@@ -1,12 +1,17 @@
-# nZEDb-deploy
+# nZEDb-Semi-Auto-Installer
 A collection of scripts to automate and simplify the deployment of a nZEDb Usenet Indexer using the new format of their GitHub repository.
+
+## 1. Remove AppArmo
+
+sudo /etc/init.d/apparmor stop
+sudo /etc/init.d/apparmor teardown
+sudo update-rc.d -f apparmor remove
+
 
 ## nZEDb-1.sh
 
 First Phase of the deployment.  Execution goes like follows:
 
-* Install VMware Tools for Virtual Machines
-* Remove AppArmor
 * Install Python 3
 * Update System & Upgrade Apps
 * Reboot System (VERY IMPORTANT BECAUSE OF APPARMOR)
