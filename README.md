@@ -1,20 +1,23 @@
 # nZEDb-Semi-Auto-Installer
 A collection of scripts to automate and simplify the deployment of a nZEDb Usenet Indexer using the new format of their GitHub repository.
 
-## 1. Remove AppArmo
+## But first -> Remove AppArmo!
 
+```
 sudo /etc/init.d/apparmor stop
 sudo /etc/init.d/apparmor teardown
 sudo update-rc.d -f apparmor remove
+sudo reboot now
+```
 
+## nZEDb.sh
 
-## nZEDb-1.sh
-
-First Phase of the deployment.  Execution goes like follows:
-
-* Install Python 3
 * Update System & Upgrade Apps
-* Reboot System (VERY IMPORTANT BECAUSE OF APPARMOR)
+* Install Basic Software (curl, nano, htop, etc)
+* Install Python 3 & PIP
+* Install ffmpeg, mediainfo, p7zip-full, unrar and lame
+
+
 
 ## nZEDb-2.sh
 
