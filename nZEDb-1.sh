@@ -37,16 +37,10 @@ echo -e '3. Proceed only if you authorize this script to make changes to your sy
 echo
 
 echo -e $YELLOW
-echo -e "---> [Installing VMware Tools...]"$BLACK
-sudo apt-get install open-vm-tools -y > /dev/null
-echo -e $GREEN
-echo -e "DONE!"
-
-echo -e $YELLOW
-echo -e "---> [Removing App Armor...]"$BLACK
-sudo /etc/init.d/apparmor stop > /dev/null
-sudo /etc/init.d/apparmor teardown > /dev/null
-sudo update-rc.d -f apparmor remove
+echo -e "---> [Updating System and Sources...]"$BLACK
+sudo apt-get update > /dev/null
+sudo apt-get -y upgrade > /dev/null
+sudo apt-get -y dist-upgrade > /dev/null
 echo -e $GREEN
 echo -e "DONE!"
 
